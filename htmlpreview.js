@@ -41,7 +41,7 @@
 			}
 		});
 		//Scripts
-		script = document.querySelectorAll('script[type="text/htmlpreview"]');
+		script = document.querySelectorAll('script[type="text/myfiddlepreview"]');
 		for (i = 0; i < script.length; ++i) {
 			src = script[i].src; //Get absolute URL
 			if (src.indexOf('//raw.githubusercontent.com') > 0 || src.indexOf('//bitbucket.org') > 0) { //Check if it's from raw.github.com or bitbucket.org
@@ -61,7 +61,7 @@
 
 	var loadHTML = function (data) {
 		if (data) {
-			data = data.replace(/<head([^>]*)>/i, '<head$1><base href="' + url + '">').replace(/<script(\s*src=["'][^"']*["'])?(\s*type=["'](text|application)\/javascript["'])?/gi, '<script type="text/htmlpreview"$1'); //Add <base> just after <head> and replace <script type="text/javascript"> with <script type="text/htmlpreview">
+			data = data.replace(/<head([^>]*)>/i, '<head$1><base href="' + url + '">').replace(/<script(\s*src=["'][^"']*["'])?(\s*type=["'](text|application)\/javascript["'])?/gi, '<script type="text/myfiddlepreview"$1'); //Add <base> just after <head> and replace <script type="text/javascript"> with <script type="text/myfiddlepreview">
 			setTimeout(function () {
 				document.open();
 				document.write(data);
